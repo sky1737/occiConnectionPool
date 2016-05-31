@@ -122,6 +122,8 @@ Connection *COcciConnectPool::GetConnection()
 		if (m_pConnPool != NULL)	
 		{
 			MYLOG(DEBUG, "start get connection");
+			MYLOG(DEBUG, "The count of opend connections:%u", m_pConnPool->getOpenConnections());
+			MYLOG(DEBUG, "The count of busy  connections:%u", m_pConnPool->getBusyConnections());
 			pCon = m_pConnPool->getConnection();
 			MYLOG(DEBUG, "after get connection. address:%p", pCon);
 		}
